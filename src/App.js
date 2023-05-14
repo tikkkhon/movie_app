@@ -10,7 +10,7 @@ class App extends React.Component {
     isLoading: false,
   };
 
-getMovies = async () => {
+getFilms = async () => {
   const {
     data: {
       data: {movies},
@@ -20,32 +20,32 @@ getMovies = async () => {
  };
 
 componentDidMount() {
-  this.getMovies();
+  this.getFilms();
  }
 
 render() {
   const {isLoading, movies} = this.state;
   return ( 
    <section className="container">
-    {isLoading 
-    ? <div className="loader"> 
-        <span className="loader_info">Загрузка</span>
+    {isLoading ? (
+      <div className="waiter"> 
+        <span className="waiter_info">Загрузка</span>
       </div>
-    : movies.map((movie) => {
-    console.log(movie);
-    return ( 
-    <div className="movies">
+    ) : ( 
+      <div className="films">
+      {movies.map((movie) => (
     <FilmsDisplay 
-    id={movie.id} 
+    id={movie.id}
+    key={movie.id} 
     poster={movie.medium_cover_image} 
     title={movie.title} 
     year={movie.year} 
     description={movie.summary} 
     genres={movie.genres}
     />
-    </div>
-    );
-  })}
+    ))}
+      </div>
+    )}
    </section>
   );
  }
