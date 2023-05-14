@@ -11,8 +11,8 @@ return (
       <h5 className="movie_year">{year}</h5>
       <p className="movie_description">{description}</p>
       <ul className="movie_genres"> 
-        {genres.map(genre => {
-        return <li className="genres_genre">{genre}</li>
+        {genres.map((genre, index) => {
+        return <li key={index} className="genres_genre">{genre}</li>
         })}
       </ul>
     </div>
