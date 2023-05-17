@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import './FilmPage.css';
 
 class FilmPage extends React.Component {
@@ -19,4 +19,4 @@ class FilmPage extends React.Component {
 }
 
 
-export default FilmPage;
+export default FilmPage;*/
