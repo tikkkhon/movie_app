@@ -49,6 +49,15 @@ render() {
    </section>
   );
  }
+
+ axios.get('/api/movies')
+ .then(response => {
+   const movies = response.data;
+ })
+ .catch(error => {
+   console.error('Ошибка при получении фильмов:', error);
+ })
+
 } 
 
 /*function App() {
